@@ -1,6 +1,5 @@
 # restaurant
 
-<<<<<<< HEAD
 ## Project setup
 ```
 =======
