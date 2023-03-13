@@ -1,28 +1,21 @@
-// vue.config.js
 module.exports = {
     css: {
-      loaderOptions: {
-        // pass options to sass-loader
-        // @/ is an alias to src/
-        // so this assumes you have a file named `src/variables.sass`
-        // Note: this option is named as "prependData" in sass-loader v8
-        sass: {
-          additionalData: `@import "~@/variables.sass"`
-        },
-        // by default the `sass` option will apply to both syntaxes
-        // because `scss` syntax is also processed by sass-loader underlyingly
-        // but when configuring the `prependData` option
-        // `scss` syntax requires an semicolon at the end of a statement, while `sass` syntax requires none
-        // in that case, we can target the `scss` syntax separately using the `scss` option
-        scss: {
-          additionalData: `@import "~@/variables.scss";`
-        },
-        // pass Less.js Options to less-loader
-        less:{
-            additionalData: '@assets/css/variables.less";'
-
-          }
+        loaderOptions: {
+            less: {
+                additionalData: `@import "@/assets/css/variables.less";`
+            }
         }
-      }
+    },
+    chainWebpack: (config) => {
+        const svgRule = config.module.rule('svg');
+
+        svgRule.uses.clear();
+
+        svgRule
+            .use('babel-loader')
+            .loader('babel-loader')
+            .end()
+            .use('vue-svg-loader')
+            .loader('vue-svg-loader');
     }
-    
+};
