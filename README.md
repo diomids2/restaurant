@@ -1,6 +1,6 @@
 # restaurante system with VUE
 
-Who to Run
+Who to Run?, 
 Need Node Version 16
 
 ## Project setup
