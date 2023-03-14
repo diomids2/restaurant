@@ -1,11 +1,7 @@
-# restaurante system with VUE
-
-Who to Run?, 
-Need Node Version 16
+# restaurant
 
 ## Project setup
 ```
-
 npm install
 ```
 
