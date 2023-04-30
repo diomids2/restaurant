@@ -1,7 +1,10 @@
 # restaurant
 
+como rodar
+
 ## Project setup
 ```
+
 npm install
 ```
 
@@ -9,6 +12,8 @@ npm install
 ```
 npm run serve
 ```
+adicionar o router
+vue add router
 
 ### Compiles and minifies for production
 ```
