@@ -12,8 +12,11 @@ npm install
 ```
 npm run serve
 ```
-adicionar o router
-vue add router
+
+### Run Json Server
+```
+json-server --watch db.json
+
 
 ### Compiles and minifies for production
 ```
