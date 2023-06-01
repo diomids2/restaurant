@@ -1,5 +1,5 @@
 <template>
-    <div class="item">
+    <div class="item" @click="addToCart">
         <div class="container">
             <div class="item--tag" v-if="item.offer">Oferta</div>
             <img class="item--img" :src="imagePath" alt="" />
@@ -30,6 +30,11 @@ export default {
         imagePath() {
             return require(`../assets/images/${this.selectedCategory}/${this.item.id}.png`);
         }
+    },
+    methods: {
+        addToCart() {
+            this.$store.dispatch('addToCart', this.item);
+        }
     }
 };
 </script>
@@ -43,6 +48,8 @@ export default {
     position: relative;
     margin: 20px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 
     &--tag {
         position: absolute;
@@ -65,7 +72,7 @@ export default {
     &--name {
         font-weight: 600;
         font-size: 18px;
-        margin: 8px auto;
+        margin: 0;
     }
 
     &--description {
@@ -79,7 +86,13 @@ export default {
         font-weight: 600;
         font-size: 18px;
         color: @yellow;
-        margin: 8px auto;
+        margin: 0;
+    }
+    .content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     @media @tablets {
@@ -87,18 +100,23 @@ export default {
         height: fit-content;
         border: 1px solid @light-grey;
         display: flex;
+        flex-direction: row;
         margin: 10px 0;
-        padding: 5px 10px;
+        padding: 10px 20px;
 
         &--img {
-            height: 60px;
+            height: 86px;
             order: 0;
             margin: 0 0 10px 0;
         }
 
         &--price {
             text-align: right;
-            margin: 0 auto;
+            margin: 10px 0 0 auto;
+        }
+
+        .content {
+            flex-grow: 1;
         }
 
         &--tag {
