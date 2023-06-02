@@ -93,14 +93,14 @@
     ],
     "combo": [
         {
-            "id": "0012",
+            "id": "0013",
             "name": "Combo 1",
             "description": "1 hamburguer duplo, 1 guaraná lata e 1 milkshake chocolate",
             "price": 50.0,
             "offer": false
         },
         {
-            "id": "0013",
+            "id": "0014",
             "name": "Combo 2",
             "description": "2 pizzas",
             "price": 45.0,

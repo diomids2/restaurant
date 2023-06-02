@@ -13,7 +13,10 @@ npm install
 npm run serve
 ```
 
-json-server --watch db.json### Run Json Server
+### Run Json Server
+json-server --watch db.json
+
+
 ```
 
 ```
